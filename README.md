@@ -15,11 +15,11 @@ Options (shown with defaults)
 -------
 ```js
   {
-    // Highlight highlights children, any other setting
+    // Highlight highlights children, any other setting removes highlights
     action: 'highlight',
-    // CSS class added with highlight spans
+    // CSS class of highlight spans
     highlightClass: 'highlighted',
-    // determines if indexof search skips by 1 (greedy) or term length (lazy)
+    // Comparable to REGEX meaning of greedy for highlights
     greedy: true,
     // Automatically calls unhighlight on element before performing a highlight
     autoClear: true
@@ -29,4 +29,4 @@ Options (shown with defaults)
 Notes
 ------
 1. When highlighting, whitespace the the browser would compress before rendering is replaced in any elements containing text so that searching using terms with spaces in them has a better chance of correct identification.
-2. With autoClear turned off, adjacent spans aren't merged on subsequent searches, so a search on 'as' of a, followed by a subsequent search of 'as' would create '<span class="highlighted">a</span><span class="highlighted">s</span>'
+2. With autoClear turned off, adjacent spans aren't merged on subsequent searches, so after highlighting a of 'as', subsequently highlighting 'as' would create ```<span class="highlighted">a</span><span class="highlighted">s</span>```
